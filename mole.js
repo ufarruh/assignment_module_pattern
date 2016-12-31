@@ -1,14 +1,19 @@
-// setInterval(function(){
-//   mole.style.backgroundColor = "red";
-//   //mole.style.backgroundColor = "black";
-// }, 1000);
+var APP = APP || {};
+
+APP.mole = (function(){
+
+  var stub = {}
+  var $moles = $(".mole");
+
+   stub.molePop = function(){
+    setInterval(function(){
+      var mole = $moles[Math.floor(Math.random() * $moles.length)]
+      $(mole).toggleClass("target");
+    }, 300);
+  }
+
+  return stub;
+})();
 
 
- var $moles = $(".mole");
- var mole = $moles[Math.floor(Math.random() * $moles.length)]
- //mole.style.backgroundColor = "black";
- //mole.style.backgroundColor = "red";
-
- setInterval(function(){
-   mole.animate({ width: '300px'}, "slow");
- });
+APP.mole.molePop();

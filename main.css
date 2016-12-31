@@ -7,3 +7,7 @@ div {
   border: 1px black solid;
   background: black;
 }
+
+ .target {
+  background: red;
+}
